@@ -5,12 +5,24 @@ from Connection.connection import db
 
 todobp=Blueprint('todo',__name__)
 
+def row2dict(row):
+    d = {}
+    for column in row.__table__.columns:
+        d[column.name] = str(getattr(row, column.name))
+
+    return d
+
 @todobp.route('/get_data',methods=['GET'])
 def get_todo():
     try:
         todo=Todo.query.all()
-        print(todo)
-        return jsonify({'message':'Data Sent','status':200})
+        if(request.args["search"]):
+            todo=Todo.query.filter(Todo.message.like(f"%{request.args['search']}%")).all()
+        data=[]
+        for i in todo:
+            data.append(row2dict(i))
+    
+        return jsonify({'message':'Data Sent','status':200,"data":data})
     except Exception as e:
         return jsonify({"message":"Error Occured","status":500})
 
@@ -40,7 +52,9 @@ def delete_todo():
 def edit_todo():
     try:
         data=request.json
-        
-        return jsonify({"message":f"{e}","status":200})
+        row=Todo.query.filter(Todo.id==data["id"]).first()
+        row.message=data["message"]
+        db.session.commit()
+        return jsonify({"message":"Data Edited","status":200})
     except Exception as e:
         return jsonify({"message":f"{e}","status":500})
