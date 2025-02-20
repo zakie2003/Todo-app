@@ -15,7 +15,7 @@ const toggleForm = () => {
 
 const add_data = async () => {
     try {
-        const response = await axios.post("http://localhost:5000/todo/add_data", { message: message.value });
+        const response = await axios.post("https://todo-app-vemn.onrender.com/todo/add_data", { message: message.value });
         console.log(response.data);
         message.value = "";
         toggleForm();
@@ -27,7 +27,7 @@ const add_data = async () => {
 
 const getData = async (query = "") => {
     try {
-        const response = await axios.get("http://localhost:5000/todo/get_data", { params: { search: query } });
+        const response = await axios.get("https://todo-app-vemn.onrender.com/todo/get_data", { params: { search: query } });
         card_data.value = response.data.data;
         console.log(response.data);
     } catch (error) {

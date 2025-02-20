@@ -10,7 +10,7 @@ const props = defineProps({
 
 const delete_data = async (id) => {
     try {
-        await axios.post('http://localhost:5000/todo/delete_data', { 'id': id });
+        await axios.post('https://todo-app-vemn.onrender.com/todo/delete_data', { 'id': id });
         props.get_data();
     } catch (err) {
         console.log(err);

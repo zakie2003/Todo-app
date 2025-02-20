@@ -20,7 +20,7 @@ const edit = async (id) => {
 const updateTask = async () => {
     try {
 
-        const response = await axios.post("http://localhost:5000/todo/edit_todo", {
+        const response = await axios.post("https://todo-app-vemn.onrender.com/todo/edit_todo", {
             id: props.inner_data?.id,
             message: updatedMessage.value
         });

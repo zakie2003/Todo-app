@@ -24,7 +24,7 @@ def get_todo():
     
         return jsonify({'message':'Data Sent','status':200,"data":data})
     except Exception as e:
-        return jsonify({"message":"Error Occured","status":500})
+        return jsonify({"message":f"{e}","status":500})
 
 @todobp.route('/add_data',methods=['POST'])
 def add_todo():
