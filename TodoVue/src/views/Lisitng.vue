@@ -22,7 +22,7 @@ const delete_data = async (id) => {
     <div class="flex justify-center mt-2">
         <div class="flex flex-col items-center gap-4">
             <div v-if="props.card_data.length >0">
-                <Cards v-for="i in props.card_data" :delete_func="delete_data" :inner_data="i" class="w-full max-w-4xl"/>
+                <Cards v-for="i in props.card_data" :delete_func="delete_data" :get_data="props.get_data" :inner_data="i" class="w-full max-w-4xl"/>
             </div>
             <div v-else>
                 <h2 class="text-white">No Data Found</h2>
