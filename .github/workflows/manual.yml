@@ -15,4 +15,4 @@ jobs:
       METHOD: GET  # the method used to make the request. It is GET by default
     steps:
       - id: ping
-        uses: Todo-app/pinger@master
+        uses: srt32/uptime@v0.2
