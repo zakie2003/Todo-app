@@ -10,9 +10,11 @@ jobs:
   pinger_job:
     name: A job to ping
     runs-on: ubuntu-latest
-    env:
-      URL: https://todo-app-vemn.onrender.com
-      METHOD: GET  # the method used to make the request. It is GET by default
     steps:
-      - id: ping
-        uses: Todo-app/pinger@master
+      - name: Ping URL
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://todo-app-vemn.onrender.com
+          follow-redirect: true
+          max-attempts: 3
+          retry-delay: 5s
