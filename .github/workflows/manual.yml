@@ -1,0 +1,18 @@
+name: Scheduled Ping zak1
+# This workflow is triggered at a scheduled interval of every 30 minutes
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string.
+    # /30 denotes that it will run once every 30 minutes
+    - cron:  '*/13 * * * *'
+
+jobs:
+  pinger_job:
+    name: A job to ping
+    runs-on: ubuntu-latest
+    env:
+      URL: https://todo-app-vemn.onrender.com
+      METHOD: GET  # the method used to make the request. It is GET by default
+    steps:
+      - id: ping
+        uses: Todo-app/pinger@master
