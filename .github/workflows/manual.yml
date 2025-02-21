@@ -2,7 +2,7 @@ name: Scheduled Ping on Todo 4
 
 on:
   schedule:
-    - cron: '*/13 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   ping:
@@ -13,3 +13,8 @@ jobs:
         with:
             url-to-hit: "https://todo-app-vemn.onrender.com"
             expected-statuses: "200,301"
+        env:
+          OUTPUT_PATH: /tmp/output
+
+      - name: Export URL
+        run: echo "url=https://todo-app-vemn.onrender.com" >> $OUTPUT_PATH
