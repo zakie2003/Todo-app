@@ -1,4 +1,4 @@
-name: Scheduled Ping on Todo 2
+name: Scheduled Ping on Todo 3
 
 on:
   schedule:
