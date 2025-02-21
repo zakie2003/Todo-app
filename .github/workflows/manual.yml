@@ -11,5 +11,5 @@ jobs:
       - name: Ping the Todo app 5
         uses: srt32/uptime@v0.2
         with:
-            url-to-hit: "https://curious-paprenjak-5fc788.netlify.app"
+            url-to-hit: "https://todo-app-vemn.onrender.com"
             expected-statuses: "200,301"
