@@ -1,4 +1,4 @@
-name: Scheduled Ping on Todo
+name: Scheduled Ping on Todo 2
 # This workflow is triggered at a scheduled interval of every 30 minutes
 on:
   schedule:
