@@ -1,17 +1,17 @@
 name: Scheduled Ping on Todo 2
-# This workflow is triggered at a scheduled interval of every 30 minutes
+
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
-  ping_site:
+  ping:
     runs-on: ubuntu-latest
-    name: Ping the site
     steps:
-    - name: Check the site
-      id: hello
-      uses: srt32/uptime@master
-      with:
-        url-to-hit: "https://curious-paprenjak-5fc788.netlify.app"
-        expected-statuses: "200,301"
+      - name: Ping the Todo app
+        uses: srt32/uptime@v0.2
+        with:
+          expected-statuses: 200
+        env:
+          URL: https://todo-app-vemn.onrender.com
+          METHOD: GET
