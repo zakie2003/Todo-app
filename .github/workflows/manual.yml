@@ -2,7 +2,7 @@ name: Scheduled Ping on Todo 4
 
 on:
   schedule:
-    - cron: '5 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   ping:
