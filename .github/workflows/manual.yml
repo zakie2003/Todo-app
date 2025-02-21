@@ -15,4 +15,4 @@ jobs:
       METHOD: GET  # the method used to make the request. It is GET by default
     steps:
       - id: ping
-        uses: zakie2003/pinger@master
+        uses: Todo-app/pinger@master
