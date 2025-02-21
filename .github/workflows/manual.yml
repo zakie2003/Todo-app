@@ -1,4 +1,4 @@
-name: Scheduled Ping on Todo 3
+name: Scheduled Ping on Todo 4
 
 on:
   schedule:
@@ -13,5 +13,5 @@ jobs:
         with:
           expected-statuses: 200
         env:
-          URL: https://todo-app-vemn.onrender.com
+          URL: https://curious-paprenjak-5fc788.netlify.app
           METHOD: GET
