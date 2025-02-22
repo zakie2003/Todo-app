@@ -19,8 +19,11 @@ Responsive UI
 API End Points
 
 GET /get_data – Retrieve all todos (supports search query).
+
 POST /add_data – Add a new todo.
+
 POST /delete_data – Delete a todo by ID.
+
 POST /edit_todo – Edit an existing todo.
 
 Tech Stack
