@@ -18,7 +18,7 @@ Responsive UI
 
 API End Points
 
-!) GET /get_data – Retrieve all todos (supports search query).
+1) GET /get_data – Retrieve all todos (supports search query).
 
 2) POST /add_data – Add a new todo.
 
