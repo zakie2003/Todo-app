@@ -2,7 +2,7 @@ name: Scheduled Ping on Todo 4
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/40 * * * *'
 
 jobs:
   ping:
@@ -11,7 +11,7 @@ jobs:
       - name: Ping the Todo app 5
         uses: srt32/uptime@v0.2
         with:
-            url-to-hit: "https://todo-app-vemn.onrender.com"
+            url-to-hit: "https://zingy-gelato-29d699.netlify.app"
             expected-statuses: "200,301"
         env:
           OUTPUT_PATH: /tmp/output
